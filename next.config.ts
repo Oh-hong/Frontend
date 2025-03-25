@@ -1,38 +1,37 @@
-import { withSentryConfig } from "@sentry/nextjs";
-import withBundleAnalyzer from "@next/bundle-analyzer";
-import type { NextConfig } from "next";
-import withPWA from "next-pwa";
+import { withSentryConfig } from '@sentry/nextjs';
+import withBundleAnalyzer from '@next/bundle-analyzer';
+import type { NextConfig } from 'next';
+import withPWA from 'next-pwa';
 
 const withBundle = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === "true",
+  enabled: process.env.ANALYZE === 'true',
 });
 
 const withPWAWrapper = withPWA({
-  dest: "public",
-  disable: process.env.NODE_ENV === "development",
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
 }) as (config: NextConfig) => NextConfig;
 
 const nextConfig: NextConfig = withBundle(
   withPWAWrapper({
     reactStrictMode: true,
-    staticPageGenerationTimeout: 1,
     images: {
-      domains: process.env.NEXT_PUBLIC_IMAGE_DOMAINS?.split(",") || [],
+      domains: process.env.NEXT_PUBLIC_IMAGE_DOMAINS?.split(',') || [],
       remotePatterns: [
         {
-          protocol: "https",
-          hostname: "codeit-doit.s3.ap-northeast-2.amazonaws.com",
+          protocol: 'https',
+          hostname: 'codeit-doit.s3.ap-northeast-2.amazonaws.com',
         },
       ],
       minimumCacheTTL: 86400,
     },
     headers: async () => [
       {
-        source: "/api/:path*",
+        source: '/api/:path*',
         headers: [
           {
-            key: "Access-Control-Allow-Origin",
-            value: "*",
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
           },
         ],
       },
@@ -44,8 +43,8 @@ export default withSentryConfig(nextConfig, {
   // For all available options, see:
   // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
-  org: "xeun-lab",
-  project: "thunderting",
+  org: 'xeun-lab',
+  project: 'thunderting',
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
@@ -65,7 +64,7 @@ export default withSentryConfig(nextConfig, {
   // This can increase your server load as well as your hosting bill.
   // Note: Check that the configured route will not match with your Next.js middleware, otherwise reporting of client-
   // side errors will fail.
-  tunnelRoute: "/monitoring",
+  tunnelRoute: '/monitoring',
 
   // Automatically tree-shake Sentry logger statements to reduce bundle size
   disableLogger: true,
