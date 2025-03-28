@@ -1,16 +1,17 @@
-'use client';
+"use client";
+export const dynamic = "force-dynamic";
 
-import { motion } from 'framer-motion';
-import Lottie from 'lottie-react';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-import Button from '@/components/ui/button/Button';
-import PWAInstaller from '@/components/ui/button/PWAInstaller';
-import fireworkAnimation from '@/public/assets/landing/fireworks.json';
-import Section01 from '@/public/assets/landing/section01.svg';
-import Section02 from '@/public/assets/landing/section02.svg';
-import Logo from '@/public/assets/logo/logoWhite.svg';
+import Button from "@/components/ui/button/Button";
+import PWAInstaller from "@/components/ui/button/PWAInstaller";
+import fireworkAnimation from "@/public/assets/landing/fireworks.json";
+import Section01 from "@/public/assets/landing/section01.svg";
+import Section02 from "@/public/assets/landing/section02.svg";
+import Logo from "@/public/assets/logo/logoWhite.svg";
 
 // FramerMotion
 const fadeInVariant = {
@@ -22,7 +23,7 @@ export default function Page() {
   const router = useRouter();
 
   return (
-    <div className="pb-10 w-full bg-black font-['Pretendard'] text-white">
+    <div className="w-full bg-black pb-10 font-['Pretendard'] text-white">
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -43,7 +44,7 @@ export default function Page() {
           </div>
           <Button
             color="white"
-            onClick={() => router.push('meeting/list')}
+            onClick={() => router.push("meeting/list")}
             className="h-10 w-[6.25rem] text-sm shadow-lg shadow-yellow-10 drop-shadow sm:h-[3.75rem] sm:w-[14.625rem] md:text-lg"
           >
             시작하기
@@ -69,9 +70,10 @@ export default function Page() {
             <p className="text-sm font-extralight sm:text-xl">
               바쁜 일상 속에서도 가볍게 즐길 수 있는 모임이 필요하신가요?
               <br />
-              번개팅에서는 술자리, 보드게임, 카페, 맛집 등 다양한 번개 모임을 쉽게 탐색하고 즉시
-              참여할 수 있어요. 직접 모임을 만들어 친구를 모집할 수도 있고, 실제 참여자들의 솔직한
-              리뷰를 확인하며 원하는 번개를 선택할 수도 있죠.
+              번개팅에서는 술자리, 보드게임, 카페, 맛집 등 다양한 번개 모임을
+              쉽게 탐색하고 즉시 참여할 수 있어요. 직접 모임을 만들어 친구를
+              모집할 수도 있고, 실제 참여자들의 솔직한 리뷰를 확인하며 원하는
+              번개를 선택할 수도 있죠.
             </p>
           </div>
           <Image
@@ -99,10 +101,11 @@ export default function Page() {
               믿을 수 있는 번개⚡️
             </h2>
             <p className="text-sm font-extralight sm:text-xl">
-              번개팅에서는 단순히 모임을 찾는 것뿐만 아니라, 실제 참여자들의 리뷰를 확인하고 소통할
-              수 있어요. 참여 전에 유저들의 생생한 후기를 살펴보고, 궁금한 점이 있다면 채팅으로 직접
-              질문해보세요! 주최자와 참가자 간의 자유로운 소통을 통해 모임 분위기, 일정, 준비
-              사항까지 미리 체크할 수 있어요.
+              번개팅에서는 단순히 모임을 찾는 것뿐만 아니라, 실제 참여자들의
+              리뷰를 확인하고 소통할 수 있어요. 참여 전에 유저들의 생생한 후기를
+              살펴보고, 궁금한 점이 있다면 채팅으로 직접 질문해보세요! 주최자와
+              참가자 간의 자유로운 소통을 통해 모임 분위기, 일정, 준비 사항까지
+              미리 체크할 수 있어요.
               <br />
               <br />
               이제는 신뢰할 수 있는 번개에서 더 편하게, 더 즐겁게 만나보세요!
