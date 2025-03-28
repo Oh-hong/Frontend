@@ -1,17 +1,23 @@
 "use client";
-export const dynamic = "force-dynamic";
 
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import dynamic from "next/dynamic";
 import Button from "@/components/ui/button/Button";
-import PWAInstaller from "@/components/ui/button/PWAInstaller";
+
 import fireworkAnimation from "@/public/assets/landing/fireworks.json";
 import Section01 from "@/public/assets/landing/section01.svg";
 import Section02 from "@/public/assets/landing/section02.svg";
 import Logo from "@/public/assets/logo/logoWhite.svg";
+
+const PWAInstaller = dynamic(
+  () => import("@/components/ui/button/PWAInstaller"),
+  {
+    ssr: false,
+  },
+);
 
 // FramerMotion
 const fadeInVariant = {
