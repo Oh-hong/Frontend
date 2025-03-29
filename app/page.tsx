@@ -113,7 +113,7 @@ export default function Page() {
           </div>
         </motion.div>
       </section>
-      {/* <PWAInstaller /> */}
+      <PWAInstaller />
     </div>
   );
 }
