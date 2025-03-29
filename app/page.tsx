@@ -2,7 +2,7 @@
 export const dynamic = "force-dynamic";
 
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -31,7 +31,7 @@ export default function Page() {
         variants={fadeInVariant}
         className="flex items-center justify-center"
       >
-        <Lottie animationData={fireworkAnimation} loop />
+        {/* <Lottie animationData={fireworkAnimation} loop /> */}
         <div className="flex flex-col items-center pt-[16.375rem] sm:pt-[17.6875rem] md:pt-[17.625rem]">
           <Image
             src={Logo}
@@ -50,7 +50,7 @@ export default function Page() {
             시작하기
           </Button>
         </div>
-        <Lottie animationData={fireworkAnimation} loop />
+        {/* <Lottie animationData={fireworkAnimation} loop /> */}
       </motion.section>
 
       <section className="mt-[22.5625rem] flex flex-col items-center gap-y-[24.625rem] px-[0.9375rem] sm:mt-[15.34rem] sm:gap-y-[25rem] sm:px-8 md:mt-[21.875rem] md:gap-y-[26.875rem]">
