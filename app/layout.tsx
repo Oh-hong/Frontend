@@ -46,7 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="ko">
       <head>
         <title>번개팅</title>
-        {/* <Script
+        <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
         />
@@ -63,7 +63,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               });
             `,
           }}
-        /> */}
+        />
       </head>
       <body className="custom-cursor">
         <link rel="preconnect" href="/" />
